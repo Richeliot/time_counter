@@ -1,0 +1,129 @@
+@import url('https://rsms.me/inter/inter.css');
+
+:root {
+  --color-light: #f1f1f1f1;
+  --color-not-important: #727272f2;
+  --color-dark: #212121;
+  
+  --color-background: var(--color-light);
+  --color-text: var(--color-dark);
+  --color-accent: var(--color-signal);
+  
+  --size-radius: 1px;
+  
+  font-family: 'Montserrat';
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+
+.card {
+  font-family: 'Montserrat';
+  background: var(--color-background);
+  padding: 8px;
+  border-radius: 20px;
+  border: 3px solid var(--color-shadow, #727272f2);
+  box-shadow: .2rem .2rem 0 var(--color-shadow, #727272f2);
+  
+  &--inverted {
+    --color-background: var(--color-dark);
+    color: var(--color-light);
+    --color-shadow: var(--color-accent);
+  }
+  
+  &--accent {
+    --color-background: var(--color-signal);
+    --color-accent: var(--color-light);
+    color: var(--color-dark);
+  }
+  
+  *:first-child {
+    margin-top: 0;
+  }
+}
+
+.l-design-widht {
+  max-width: 40rem;
+  padding: 1rem;
+}
+
+.input {
+  position: relative;
+  
+  &__label {
+    position: absolute;
+    max-width: 200px;
+    font-weight: 500;
+    left: 10px;
+    top: 5px;
+    padding: 2px;
+    background: pink;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    color: #727272f2;
+    background: var(--color-background);
+    transition: transform 120ms ease-in;
+  }
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 1px solid #727272f2;
+    border-radius: 10px;
+    padding: 10px;
+    background: transparent;
+    
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + .input__label {
+        transform: translate(-3px, -100%) scale(.8);
+        color: var(--color-not-important);
+      }
+    }
+  }
+}
+
+.button-group {
+  position: absolute;
+  right: 0;
+  top: 3px;
+}
+
+button {
+  color: currentColor;
+  background: var(--color-accent);
+  border: none;
+
+  .icon {
+    font-size: 28px;
+    color: #727272f2;
+    border-radius: 50%;
+    border: solid 1px #d4d3d3f2;
+    padding: 0;
+    transition: color 80ms ease-in;
+
+    :hover {
+        color: #33bf6df2;
+        border-color: solid 1px #33bf6df2;
+    }
+  }
+  :hover {
+    color: #33bf6df2;
+}
+}
+.icon {
+  display: inline-block;
+  width: 1em; height: 1em;
+}
+
+.hidden {
+  display: none;
+}
