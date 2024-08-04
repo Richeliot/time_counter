@@ -1,5 +1,4 @@
 <article class="l-design-widht">
-
     <div class="card">
     <h2>Timer</h2>
     <label class="input">
@@ -11,6 +10,36 @@
       </div>
     </label>
   </div>
+</article>
+<article class="l-design-widht">
+  <div class="card">
+  <h2>Data</h2>
+  <table mat-table [dataSource]="dataSource" class="table">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="taskname">
+      <th mat-header-cell *matHeaderCellDef> Taskname </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef> Time </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Actions -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </div>
+  </article>
+  
   
     <!-- <div class="card card--inverted">
     <h2>Colors</h2>
